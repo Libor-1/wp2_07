@@ -8,69 +8,74 @@
 
  <body>
 
-<h1> People and their clothes </h1>
+<h1> People and their clothes and cars </h1><hr><br>
+
 
  <?php 
 
- $persons[0] = "Libor Pluháček";
- $persons[1] = "Tomáš Plaček";
- $persons[2] = "Martin Kokeš";
- $persons[3] = "Petra Suchánková";
- $persons[4] = "Zuzina Pavlíková";
+ $car[0]['type'] = "Audi";
+ $car[0]['color'] = "red";
+ $car[0]['year of manufacture'] = "1988";
 
- $clothing[0] = "shirt";
- $clothing[1] = "socks";
- $clothing[2] = "shoes";
- $clothing[3] = "pants";
- $clothing[4] = "hat";
- 
- $colors[0] = "yellow";
- $colors[1] = "red";
- $colors[2] = "blue";
- $colors[3] = "black";
- $colors[4] = "white";
+ $car[1]['type'] = "BWM";
+ $car[1]['color'] = "black";
+ $car[1]['year of manufacture'] = "2000";
 
- $brand[0] = "Armani";
- $brand[1] = "Lacoste";
- $brand[2] = "Benetton";
- $brand[3] = "Converse";
- $brand[4] = "Guess";
+ $car[2]['type'] = "Volkswagen";
+ $car[2]['color'] = "white";
+ $car[2]['year of manufacture'] = "2010";
 
- $subject[0] ['name'] = $persons[0];
- $subject[0] ['wear'] = $clothing[2];
- $subject[0] ['color'] = $colors[4];
- $subject[0] ['brand'] = $brand[0];
+ $car[3]['type'] = "Citroen";
+ $car[3]['color'] = "blue";
+ $car[3]['year of manufacture'] = "1987";
 
- $subject[1] ['name'] = $persons[1];
- $subject[1] ['wear'] = $clothing[0];
- $subject[1] ['color'] = $colors[2];
- $subject[1] ['brand'] = $brand[1];
+ $car[4]['type'] = "Kia";
+ $car[4]['color'] = "pink";
+ $car[4]['year of manufacture'] = "1999";
 
- $subject[2] ['name'] = $persons[2];
- $subject[2] ['wear'] = $clothing[3];
- $subject[2] ['color'] = $colors[0];
- $subject[2] ['brand'] = $brand[2];
+ $car[5]['type'] = "Škoda";
+ $car[5]['color'] = "brown";
+ $car[5]['year of manufacture'] = "2008";
 
 
 
- foreach($subject[0] as $a => $a_value) {
-    echo $a . ": " . $a_value;
-    echo "<br>";
-    }
-    ?>
-    <br><br>
-    <?php
-    foreach($subject[1] as $b => $b_value) {
-    echo $b . ": " . $b_value;
-    echo "<br>";
-    }
-    ?>
-    <br><br>
-    <?php
-    foreach($subject[2] as $c => $c_value) {
-    echo $c . ": " . $c_value;
-    echo "<br>";
-    }
+$person[0]['name'] = "Libor Pluháček";
+$person[0]['clothing'] = "shirt";
+$person[0]['color'] = "yellow";
+$person[0]['brand'] = "Armani";
+$person[0]['car'] = $car[3];
+
+$person[1]['name'] = "Tomáš Plaček";
+$person[1]['clothing'] = "socks";
+$person[1]['color'] = "red";
+$person[1]['brand'] = "Lacoste";
+$person[1]['car'] = $car[0];
+
+$person[2]['name'] = "Martin Kokeš";
+$person[2]['clothing'] = "shoes";
+$person[2]['color'] = "blue";
+$person[2]['brand'] = "Benetton";
+$person[2]['car'] = $car[4];
+
+$person[3]['name'] = "Petra Suchánková";
+$person[3]['clothing'] = "pants";
+$person[3]['color'] = "black";
+$person[3]['brand'] = "Converse";
+$person[3]['car'] = $car[2];
+
+$person[4]['name'] = "Zuzina Pavlíková";
+$person[4]['clothing'] = "hat";
+$person[4]['color'] = "white";
+$person[4]['brand'] = "Guess";
+$person[4]['car'] = $car[1];
+
+
+
+ for ($i=0; $i < 5; $i++) {
+
+echo $person[$i]['name'] . ": " . $person[$i]['car']['type'] . ", " . $person[$i]['car']['year of manufacture'] . ", " . $person[$i]['car']['color'] . "." . "<br>" . $person[$i]['name'] . ": " . $person[$i]['brand'] . ", " . $person[$i]['clothing'] . ", " .  $person[$i]['color'] . "<br>" . "<br>"  ; 
+
+ }
 
 ?>
 
